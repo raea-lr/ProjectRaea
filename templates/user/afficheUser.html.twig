@@ -1,0 +1,19 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1> Liste des Users</h1>
+<table border="2">
+    <tr><th>Id User</th><th>Nom</th><th>Mail</th><th>MDP</th><th>Tel</th><th>Role</th></tr>
+    <tr {% for u in list %}>
+        <td>{{ u.id  }}</td>
+        <td>{{ u.nom }}</td>
+        <td>{{ u.mail }}</td>
+        <td>{{ u.mdp }}</td>
+        <td>{{ u.tel }}</td>
+        <td>{{ u.role }}</td>
+    </tr {% endfor %}>
+</table>
+</body>
+</html>

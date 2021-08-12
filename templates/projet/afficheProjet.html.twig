@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjetController!{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered ">
+            <thead>
+            <tr>
+                <th>ID_Projet   </th>
+                <th>Libelle   </th>
+                <th>Date  </th>
+                <th>Prix   </th>
+                <th>Supprimer  </th>
+                <th>Modifier   </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr {% for c in util %}>
+                <td>{{ c.id    }}</td>
+                <td>{{ c.libelle   }}</td>
+                <td>{{ c.date  }}</td>
+                <td>{{ c.prix   }}</td>
+
+
+                <td><a href="{{ path('suppadmin',{'id':c.id}) }}"> Supprimer </a></td>
+                <td><a href="{{ path('update'   ,{'id':c.id}) }}"> Modifier  </a></td>
+
+
+            </tr {% endfor %}>
+            <tr>
+            </tr>
+
+
+            </tfoot>
+        </table>
+
+    </div>
+    <!-- /.box-body -->
+{% endblock %}

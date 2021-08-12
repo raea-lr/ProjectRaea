@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClientController!{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered ">
+            <thead>
+            <tr>
+                <th>ID_Client   </th>
+                <th>NOMClient   </th>
+                <th>Mail        </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr {% for c in util %}>
+                <td>{{ c.id    }}</td>
+                <td>{{ c.nom_client   }}</td>
+                <td>{{ c.mail_cleint  }}</td>
+
+
+
+                <td><a href="{{ path('suppadmin',{'id':c.id}) }}"> Supprimer </a></td>
+                <td><a href="{{ path('update'   ,{'id':c.id}) }}"> Modifier  </a></td>
+
+
+            </tr {% endfor %}>
+            <tr>
+            </tr>
+
+
+            </tfoot>
+        </table>
+
+    </div>
+
+
+    <!-- /.box-body -->
+{% endblock %}
